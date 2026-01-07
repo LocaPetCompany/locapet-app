@@ -1,0 +1,62 @@
+import 'package:locapet/export/core.dart';
+import 'package:locapet/export/package.dart';
+
+class NavigationItemWidget extends StatelessWidget {
+  final String label;
+  final bool isActive;
+  final IconData icon;
+  final VoidCallback onTap;
+
+  const NavigationItemWidget({
+    super.key,
+    required this.label,
+    required this.isActive,
+    required this.icon,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: onTap,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: AppColor.whiteColor,
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFF000000).withValues(alpha: 0.08),
+                offset: const Offset(0, -1),
+                blurRadius: 0.6,
+                spreadRadius: -1,
+              ),
+            ],
+          ),
+          child: SizedBox(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  icon,
+                  color: isActive ? AppColor.primaryColor : AppColor.grayColor,
+                ),
+                const Gap(4),
+                Text(
+                  label,
+                  style: AppTextStyle.appTextStyle.copyWith(
+                    fontSize: 10,
+                    color: isActive
+                        ? AppColor.primaryColor
+                        : AppColor.grayColor,
+                    fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
