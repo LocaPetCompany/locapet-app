@@ -85,11 +85,11 @@ class AppRouter {
                 StatefulShellBranch(
                   routes: [
                     GoRoute(
-                      path: SearchScreen.routePath,
-                      name: SearchScreen.routeName,
+                      path: NearbyScreen.routePath,
+                      name: NearbyScreen.routeName,
                       builder: (context, state) {
                         _logger.i('${state.uri}으로 이동!!!');
-                        return const SearchScreen();
+                        return const NearbyScreen();
                       },
                     ),
                   ],
@@ -100,11 +100,11 @@ class AppRouter {
                 StatefulShellBranch(
                   routes: [
                     GoRoute(
-                      path: ProfileScreen.routePath,
-                      name: ProfileScreen.routeName,
+                      path: MyScreen.routePath,
+                      name: MyScreen.routeName,
                       builder: (context, state) {
                         _logger.i('${state.uri}으로 이동!!!');
-                        return const ProfileScreen();
+                        return const MyScreen();
                       },
                     ),
                   ],
