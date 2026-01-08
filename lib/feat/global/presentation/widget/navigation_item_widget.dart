@@ -39,16 +39,17 @@ class NavigationItemWidget extends StatelessWidget {
               children: [
                 Icon(
                   icon,
-                  color: isActive ? AppColor.primaryColor : AppColor.grayColor,
+                  color: isActive
+                      ? AppColor.primaryColor800
+                      : AppColor.grayColor700,
                 ),
                 const Gap(4),
                 Text(
                   label,
-                  style: AppTextStyle.appTextStyle.copyWith(
-                    fontSize: 10,
+                  style: AppTextStyle.body2.copyWith(
                     color: isActive
-                        ? AppColor.primaryColor
-                        : AppColor.grayColor,
+                        ? AppColor.primaryColor800
+                        : AppColor.grayColor700,
                     fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
                   ),
                 ),

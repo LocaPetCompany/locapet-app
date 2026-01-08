@@ -19,7 +19,7 @@ class ConfirmBtn extends StatelessWidget {
       onTap: onTap,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: isActive ? AppColor.primaryColor : AppColor.grayColor,
+          color: isActive ? AppColor.primaryColor800 : AppColor.grayColor700,
           borderRadius: BorderRadius.circular(12),
         ),
         child: SizedBox(

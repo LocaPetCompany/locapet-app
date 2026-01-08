@@ -18,11 +18,11 @@ class SwitchBtn extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(title, style: AppTextStyle.appTextStyle.copyWith()),
+        Text(title, style: AppTextStyle.body1),
         CupertinoSwitch(
           value: value,
           onChanged: onChanged,
-          activeTrackColor: AppColor.primaryColor,
+          activeTrackColor: AppColor.primaryColor800,
         ),
       ],
     );

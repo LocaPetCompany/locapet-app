@@ -41,10 +41,7 @@ class SocialLoginBtn extends StatelessWidget {
                 child: Text(
                   textAlign: TextAlign.center,
                   buttonText,
-                  style: AppTextStyle.appTextStyle.copyWith(
-                    fontSize: 16.sp,
-                    color: buttonTextColor,
-                  ),
+                  style: AppTextStyle.body1,
                 ),
               ),
             ],

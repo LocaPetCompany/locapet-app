@@ -22,42 +22,42 @@ import 'package:locapet/export/package.dart';
 class AppColor {
   AppColor._();
 
-  /// 앱의 주요 브랜드 색상입니다.
-  static const Color primaryColor = Color(0xFF007BFF);
+  // Scaffold Background Color
+  static const Color scaffoldBackgroundColor = Color(0xFFF9F9F9);
 
-  /// 보조적인 UI 요소에 사용되는 색상입니다.
-  static const Color secondaryColor = Color(0xFF6C757D);
+  // Primary Color
+  static const Color primaryColor800 = Color(0xFF54AA6A);
+  static const Color primaryColor700 = Color(0xFF61CC7C);
+  static const Color primaryColor600 = Color(0xFF74DA8D);
+  static const Color primaryColor500 = Color(0xFF7EDF96);
+  static const Color primaryColor400 = Color(0xFF93E9A8);
+  static const Color primaryColor300 = Color(0xFFA2F2B6);
+  static const Color primaryColor200 = Color(0xFFB5F5C5);
+  static const Color primaryColor100 = Color(0xFFC5FDD3);
+  static const Color primaryColor50 = Color(0xFFE5FFEC);
+  static const Color primaryColor40 = Color(0xFFF0FFF4);
 
-  /// 성공 상태를 나타내는 색상입니다. (예: 유효성 검사 통과)
-  static const Color successColor = Color(0xFF28A745);
+  // Gray Color
+  static const Color grayColor700 = Color(0xFF1B1B1B);
+  static const Color grayColor600 = Color(0xFF2F2F2F);
+  static const Color grayColor500 = Color(0xFF585858);
+  static const Color grayColor400 = Color(0xFF787878);
+  static const Color grayColor300 = Color(0xFF959595);
+  static const Color grayColor200 = Color(0xFFB6B6B6);
+  static const Color grayColor100 = Color(0xFFD3D3D3);
+  static const Color grayColor50 = Color(0xFFEAEAEA);
+  static const Color grayColor40 = Color(0xFFF4F4F4);
 
-  /// 위험 또는 에러 상태를 나타내는 색상입니다. (예: 삭제, 에러)
-  static const Color dangerColor = Color(0xFFDC3545);
+  // Secondary Color
+  static const Color secondaryColor = Color(0xFFF3F344);
 
-  /// 경고 상태를 나타내는 색상입니다.
-  static const Color warningColor = Color(0xFFFFC107);
-
-  /// 정보 제공 목적의 UI 요소에 사용되는 색상입니다.
-  static const Color infoColor = Color(0xFF17A2B8);
-
-  /// 밝은 배경 또는 UI 요소에 사용되는 색상입니다.
-  static const Color lightColor = Color(0xFFF8F9FA);
-
-  /// 어두운 배경 또는 텍스트에 사용되는 색상입니다.
-  static const Color darkColor = Color(0xFF343A40);
-
-  /// 순수한 흰색입니다.
+  // Black & White Color
   static const Color whiteColor = Color(0xFFFFFFFF);
-
-  /// 순수한 검은색입니다.
   static const Color blackColor = Color(0xFF000000);
 
-  /// 다크 모드용 기본 배경 색상입니다.
-  static const Color darkBackground = Color(0xFF121212);
+  // Text Color
+  static const Color textColor = Color(0xFF212121);
 
-  /// 다크 모드용 카드, 다이얼로그 등 표면 색상입니다.
-  static const Color darkSurface = Color(0xFF1E1E1E);
-
-  /// 중간 톤의 회색입니다.
-  static const Color grayColor = Color(0xFF6C757D);
+  // Deny Color
+  static const Color denyColor = Color(0xFFDa7474);
 }
