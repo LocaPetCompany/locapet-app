@@ -1,7 +1,7 @@
 import 'package:locapet/export/core.dart';
 import 'package:locapet/export/package.dart';
 
-/// ✒️ `ApptextStyle`
+/// ✒️ `AppTextStyle`
 ///
 /// 앱 전체에서 사용되는 텍스트 스타일을 정의하는 클래스입니다.
 ///
@@ -13,26 +13,75 @@ import 'package:locapet/export/package.dart';
 ///
 /// ```dart
 /// Text(
-///   'Hello World',
-///   style: ApptextStyle.appTextStyle.copyWith(
-///     fontSize: 24,
-///     fontWeight: FontWeight.bold,
-///     color: AppColor.primaryColor,
-///   ),
+///   '타이틀 입니다',
+///   style: AppTextStyle.title,
 /// );
 /// ```
 class AppTextStyle {
   AppTextStyle._();
 
-  /// 앱의 기본 텍스트 스타일입니다.
-  ///
-  /// 폰트 패밀리, 기본 크기, 두께 등을 정의합니다.
-  static TextStyle get appTextStyle {
-    return const TextStyle(
-      fontFamily: 'Pretendard', // 기본 폰트 패밀리
-      fontSize: 16, // 기본 폰트 크기
-      fontWeight: FontWeight.w400, // 기본 폰트 두께
-      color: AppColor.blackColor, // 기본 텍스트 색상
-    );
-  }
+  static const String _fontFamily = 'Pretendard';
+
+  static const TextStyle _base = TextStyle(
+    fontFamily: _fontFamily,
+    color: AppColor.textColor,
+    fontWeight: FontWeight.w400,
+    height: 1.5,
+    letterSpacing: -0.05,
+  );
+
+  /// Title
+  /// fontSize: 24, fontWeight: w600
+  static final TextStyle title = _base.copyWith(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w600,
+  );
+
+  /// Subtitle 1
+  /// fontSize: 20, fontWeight: w600
+  static final TextStyle subtitle1 = _base.copyWith(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w600,
+  );
+
+  /// Subtitle 2
+  /// fontSize: 20, fontWeight: w600
+  static final TextStyle subtitle2 = _base.copyWith(fontSize: 20.sp);
+
+  /// Headline 1
+  /// fontSize: 18, fontWeight: w600
+  static final TextStyle headline1 = _base.copyWith(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w600,
+  );
+
+  /// Headline 2
+  /// fontSize: 18
+  static final TextStyle headline2 = _base.copyWith(fontSize: 18.sp);
+
+  /// Sub-headline 1
+  /// fontSize: 16, fontWeight: w600
+  static final TextStyle subHeadline1 = _base.copyWith(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w600,
+  );
+
+  /// Sub-headline 2
+  /// fontSize: 16
+  static final TextStyle subHeadline2 = _base.copyWith(fontSize: 16.sp);
+
+  /// Body 1
+  /// fontSize: 14, fontWeight: w600
+  static final TextStyle body1 = _base.copyWith(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+  );
+
+  /// Body 2
+  /// fontSize: 14
+  static final TextStyle body2 = _base.copyWith(fontSize: 14.sp);
+
+  /// Caption
+  /// fontSize: 12
+  static final TextStyle caption = _base.copyWith(fontSize: 12.sp);
 }

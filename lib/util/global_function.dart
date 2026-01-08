@@ -76,7 +76,7 @@ class GlobalFunction {
     // showModalBottomSheet를 사용하여 BottomSheet를 표시합니다.
     await showModalBottomSheet(
       isDismissible: isDismissible ?? true,
-      backgroundColor: AppColor.grayColor,
+      backgroundColor: AppColor.grayColor700,
       context: bottomModalContext,
       builder: (BuildContext bottomModalContext) {
         return SafeArea(
@@ -122,7 +122,7 @@ class GlobalFunction {
       msg: message,
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
-      backgroundColor: AppColor.darkColor.withValues(alpha: 0.8),
+      backgroundColor: AppColor.blackColor.withValues(alpha: 0.8),
       textColor: AppColor.whiteColor,
       fontSize: 16.0,
     );

@@ -23,7 +23,7 @@ class TwinBtn extends StatelessWidget {
         Expanded(
           child: DecoratedBox(
             decoration: BoxDecoration(
-              color: AppColor.grayColor,
+              color: AppColor.grayColor700,
               borderRadius: BorderRadius.circular(12),
             ),
             child: GestureDetector(
@@ -48,7 +48,7 @@ class TwinBtn extends StatelessWidget {
         Expanded(
           child: DecoratedBox(
             decoration: BoxDecoration(
-              color: AppColor.primaryColor,
+              color: AppColor.primaryColor800,
               borderRadius: BorderRadius.circular(12),
             ),
             child: GestureDetector(
