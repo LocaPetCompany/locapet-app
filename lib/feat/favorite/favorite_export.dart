@@ -1,4 +1,4 @@
 // Data
 // Domain
 // Presentation
-export 'screen/favorite_screen.dart';
+export './presentation/screen/favorite_screen.dart';
