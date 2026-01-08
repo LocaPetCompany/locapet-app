@@ -40,11 +40,28 @@ class AppRouter {
               },
             ),
             GoRoute(
+              path: OnboardingScreen.routePath,
+              name: OnboardingScreen.routeName,
+              builder: (context, state) {
+                _logger.i('${state.uri}으로 이동!!!');
+                return const OnboardingScreen();
+              },
+            ),
+            GoRoute(
               path: AuthScreen.routePath,
               name: AuthScreen.routeName,
               builder: (context, state) {
                 _logger.i('${state.uri}으로 이동!!!');
                 return const AuthScreen();
+              },
+            ),
+            GoRoute(
+              path: EnrollPetScreen.routePath,
+              name: EnrollPetScreen.routeName,
+              parentNavigatorKey: rootNavigatorKey,
+              builder: (context, state) {
+                _logger.i('${state.uri}으로 이동!!!');
+                return const EnrollPetScreen();
               },
             ),
             StatefulShellRoute.indexedStack(
@@ -101,6 +118,15 @@ class AppRouter {
                   ],
                 ),
               ],
+            ),
+            GoRoute(
+              path: SearchScreen.routePath,
+              name: SearchScreen.routeName,
+              parentNavigatorKey: rootNavigatorKey,
+              builder: (context, state) {
+                _logger.i('${state.uri}으로 이동!!!');
+                return const SearchScreen();
+              },
             ),
           ],
         ),
