@@ -44,7 +44,10 @@ class AppRouter {
               name: OnboardingScreen.routeName,
               builder: (context, state) {
                 _logger.i('${state.uri}으로 이동!!!');
-                return const OnboardingScreen();
+                return BlocProvider(
+                  create: (context) => OnboardingCubit(),
+                  child: const OnboardingScreen(),
+                );
               },
             ),
             GoRoute(
