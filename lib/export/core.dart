@@ -1,4 +1,5 @@
 export '../core/constant/app_text.dart';
+export '../core/constant/asset_path.dart';
 export '../core/data_class/failures.dart';
 export '../core/data_class/use_cases.dart';
 export '../core/di/app_logger.dart';
