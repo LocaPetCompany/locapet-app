@@ -41,7 +41,7 @@ class SocialLoginBtn extends StatelessWidget {
                 child: Text(
                   textAlign: TextAlign.center,
                   buttonText,
-                  style: AppTextStyle.body1,
+                  style: AppTextStyle.label14M,
                 ),
               ),
             ],

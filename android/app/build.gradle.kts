@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.locapet"
+    namespace = "com.locapet.app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -19,7 +19,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.locapet"
+        applicationId = "com.locapet.app"
         minSdk = 23
         targetSdk = 36
         versionCode = flutter.versionCode

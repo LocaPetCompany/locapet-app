@@ -1,3 +1,4 @@
+import 'package:locapet/export/core.dart';
 import 'package:locapet/export/feat.dart';
 import 'package:locapet/export/package.dart';
 
@@ -17,13 +18,13 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
       if (mounted) {
-        context.goNamed(HomeScreen.routeName);
+        context.goNamed(OnboardingScreen.routeName);
       }
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(body: Center(child: SvgPicture.asset(AssetPath.logo)));
   }
 }
