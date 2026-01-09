@@ -22,42 +22,43 @@ import 'package:locapet/export/package.dart';
 class AppColor {
   AppColor._();
 
-  // Scaffold Background Color
-  static const Color scaffoldBackgroundColor = Color(0xFFF9F9F9);
-
   // Primary Color
-  static const Color primaryColor800 = Color(0xFF54AA6A);
-  static const Color primaryColor700 = Color(0xFF61CC7C);
-  static const Color primaryColor600 = Color(0xFF74DA8D);
-  static const Color primaryColor500 = Color(0xFF7EDF96);
-  static const Color primaryColor400 = Color(0xFF93E9A8);
-  static const Color primaryColor300 = Color(0xFFA2F2B6);
-  static const Color primaryColor200 = Color(0xFFB5F5C5);
-  static const Color primaryColor100 = Color(0xFFC5FDD3);
-  static const Color primaryColor50 = Color(0xFFE5FFEC);
-  static const Color primaryColor40 = Color(0xFFF0FFF4);
-
-  // Gray Color
-  static const Color grayColor700 = Color(0xFF1B1B1B);
-  static const Color grayColor600 = Color(0xFF2F2F2F);
-  static const Color grayColor500 = Color(0xFF585858);
-  static const Color grayColor400 = Color(0xFF787878);
-  static const Color grayColor300 = Color(0xFF959595);
-  static const Color grayColor200 = Color(0xFFB6B6B6);
-  static const Color grayColor100 = Color(0xFFD3D3D3);
-  static const Color grayColor50 = Color(0xFFEAEAEA);
-  static const Color grayColor40 = Color(0xFFF4F4F4);
+  static const Color primaryColor500 = Color(0xFFF00029);
+  static const Color primaryColor400 = Color(0xFFF33354);
+  static const Color primaryColor50 = Color(0xFFFee6EA);
 
   // Secondary Color
-  static const Color secondaryColor = Color(0xFFF3F344);
+  static const Color secondaryColor500 = Color(0xFFFFC300);
+  static const Color secondaryColor200 = Color(0xFFFFE38A);
+  static const Color secondaryColor50 = Color(0xFFFFF9E6);
+
+  // Gray Color
+  static const Color grayColor900 = Color(0xFF212121);
+  static const Color grayColor800 = Color(0xFF424242);
+  static const Color grayColor700 = Color(0xFF616161);
+  static const Color grayColor600 = Color(0xFF757575);
+  static const Color grayColor500 = Color(0xFF9E9E9E);
+  static const Color grayColor400 = Color(0xFFBDBDBD);
+  static const Color grayColor300 = Color(0xFFE0E0E0);
+  static const Color grayColor200 = Color(0xFFEEEEEE);
+  static const Color grayColor100 = Color(0xFFF5F5F5);
+  static const Color grayColor50 = Color(0xFFFAFAFA);
 
   // Black & White Color
   static const Color whiteColor = Color(0xFFFFFFFF);
   static const Color blackColor = Color(0xFF000000);
 
   // Text Color
-  static const Color textColor = Color(0xFF212121);
+  static const Color textPrimaryColor = grayColor900;
+  static const Color textSecondaryColor = grayColor700;
+  static const Color textTertiaryColor = grayColor500;
+  static const Color textOnPrimaryColor = whiteColor;
 
-  // Deny Color
-  static const Color denyColor = Color(0xFFDa7474);
+  // Red & Blue & Green Color
+  static const Color redColor = Color(0xFFFF383C);
+  static const Color blueColor = Color(0xFF0088FF);
+  static const Color greenColor = Color(0xFF34C759);
+
+  // Scaffold Background Color
+  static const Color scaffoldBackgroundColor = whiteColor;
 }

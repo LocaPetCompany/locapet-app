@@ -40,19 +40,11 @@ class NavigationItemWidget extends StatelessWidget {
                 Icon(
                   icon,
                   color: isActive
-                      ? AppColor.primaryColor800
+                      ? AppColor.primaryColor500
                       : AppColor.grayColor700,
                 ),
                 const Gap(4),
-                Text(
-                  label,
-                  style: AppTextStyle.body2.copyWith(
-                    color: isActive
-                        ? AppColor.primaryColor800
-                        : AppColor.grayColor700,
-                    fontWeight: isActive ? FontWeight.w600 : FontWeight.w400,
-                  ),
-                ),
+                Text(label, style: AppTextStyle.label12M),
               ],
             ),
           ),

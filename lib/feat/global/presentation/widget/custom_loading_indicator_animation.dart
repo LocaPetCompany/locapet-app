@@ -89,9 +89,9 @@ class _CustomLoadingIndicatorState extends State<CustomLoadingIndicator>
                   width: _letterWidth,
                   child: AnimatedDefaultTextStyle(
                     duration: const Duration(milliseconds: 300),
-                    style: AppTextStyle.body1.copyWith(
+                    style: AppTextStyle.label14M.copyWith(
                       color: index == _currentIndex
-                          ? AppColor.primaryColor800
+                          ? AppColor.primaryColor500
                           : AppColor.grayColor700,
                       fontWeight: FontWeight.bold,
                     ),
@@ -125,7 +125,7 @@ class _CustomLoadingIndicatorState extends State<CustomLoadingIndicator>
                         width: 6,
                         height: 6,
                         decoration: const BoxDecoration(
-                          color: AppColor.primaryColor800,
+                          color: AppColor.primaryColor500,
                           shape: BoxShape.circle,
                         ),
                       ),
