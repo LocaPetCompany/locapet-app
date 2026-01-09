@@ -58,7 +58,6 @@ class AppRouter {
             GoRoute(
               path: EnrollPetScreen.routePath,
               name: EnrollPetScreen.routeName,
-              parentNavigatorKey: rootNavigatorKey,
               builder: (context, state) {
                 _logger.i('${state.uri}으로 이동!!!');
                 return const EnrollPetScreen();
@@ -122,7 +121,6 @@ class AppRouter {
             GoRoute(
               path: SearchScreen.routePath,
               name: SearchScreen.routeName,
-              parentNavigatorKey: rootNavigatorKey,
               builder: (context, state) {
                 _logger.i('${state.uri}으로 이동!!!');
                 return const SearchScreen();
