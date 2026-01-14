@@ -6,6 +6,7 @@ class SocialLoginBtn extends StatelessWidget {
   final String buttonText;
   final Color buttonColor;
   final Color buttonTextColor;
+  final Color borderColor;
   final VoidCallback onTap;
 
   const SocialLoginBtn({
@@ -14,6 +15,7 @@ class SocialLoginBtn extends StatelessWidget {
     required this.buttonText,
     required this.buttonColor,
     required this.buttonTextColor,
+    required this.borderColor,
     required this.onTap,
   });
 
@@ -23,11 +25,12 @@ class SocialLoginBtn extends StatelessWidget {
       onTap: onTap,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(12.r),
+          border: Border.all(width: 1.0.w, color: borderColor),
           color: buttonColor,
         ),
         child: SizedBox(
-          height: 48.h,
+          height: 52.h,
           child: Stack(
             children: [
               Align(
@@ -41,7 +44,7 @@ class SocialLoginBtn extends StatelessWidget {
                 child: Text(
                   textAlign: TextAlign.center,
                   buttonText,
-                  style: AppTextStyle.label14M,
+                  style: AppTextStyle.head16SB.copyWith(color: buttonTextColor),
                 ),
               ),
             ],
