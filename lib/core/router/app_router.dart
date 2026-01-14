@@ -12,7 +12,7 @@ class AppRouter {
     final rootNavigatorKey = GlobalKey<NavigatorState>();
 
     router = GoRouter(
-      initialLocation: SplashScreen.routePath,
+      initialLocation: AuthScreen.routePath,
       navigatorKey: rootNavigatorKey,
       routes: [
         ShellRoute(
@@ -57,14 +57,24 @@ class AppRouter {
                 _logger.i('${state.uri}으로 이동!!!');
                 return const AuthScreen();
               },
-            ),
-            GoRoute(
-              path: EnrollPetScreen.routePath,
-              name: EnrollPetScreen.routeName,
-              builder: (context, state) {
-                _logger.i('${state.uri}으로 이동!!!');
-                return const EnrollPetScreen();
-              },
+              routes: [
+                GoRoute(
+                  path: CreateProfileScreen.routePath,
+                  name: CreateProfileScreen.routeName,
+                  builder: (context, state) {
+                    _logger.i('${state.uri}으로 이동!!!');
+                    return const CreateProfileScreen();
+                  },
+                ),
+                GoRoute(
+                  path: AuthCompleteScreen.routePath,
+                  name: AuthCompleteScreen.routeName,
+                  builder: (context, state) {
+                    _logger.i('${state.uri}으로 이동!!!');
+                    return const AuthCompleteScreen();
+                  },
+                ),
+              ],
             ),
             StatefulShellRoute.indexedStack(
               builder: (context, state, navigationShell) {
@@ -127,6 +137,14 @@ class AppRouter {
               builder: (context, state) {
                 _logger.i('${state.uri}으로 이동!!!');
                 return const SearchScreen();
+              },
+            ),
+            GoRoute(
+              path: EnrollPetScreen.routePath,
+              name: EnrollPetScreen.routeName,
+              builder: (context, state) {
+                _logger.i('${state.uri}으로 이동!!!');
+                return const EnrollPetScreen();
               },
             ),
           ],

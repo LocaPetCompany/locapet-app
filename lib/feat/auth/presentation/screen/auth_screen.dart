@@ -45,7 +45,9 @@ class AuthScreen extends StatelessWidget {
                 buttonColor: AppColor.whiteColor,
                 buttonTextColor: AppColor.textPrimaryColor,
                 borderColor: AppColor.grayColor300,
-                onTap: () {},
+                onTap: () {
+                  context.push(CreateProfileScreen.routePath);
+                },
               ),
               Gap(8.h),
               SocialLoginBtn(
@@ -54,11 +56,15 @@ class AuthScreen extends StatelessWidget {
                 buttonColor: AppColor.blackColor,
                 buttonTextColor: AppColor.textOnPrimaryColor,
                 borderColor: AppColor.blackColor,
-                onTap: () {},
+                onTap: () {
+                  context.push(CreateProfileScreen.routePath);
+                },
               ),
               Gap(8.h),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  context.push(CreateProfileScreen.routePath);
+                },
                 child: SizedBox(
                   height: 56.h,
                   width: double.infinity,
