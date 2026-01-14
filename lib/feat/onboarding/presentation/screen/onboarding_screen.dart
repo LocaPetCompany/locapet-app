@@ -77,7 +77,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 color: state.pageIndex == index
                                     ? AppColor.primaryColor400
                                     : AppColor.grayColor300,
-                                borderRadius: BorderRadius.circular(100),
+                                borderRadius: BorderRadius.circular(100.r),
                               ),
                             );
                           }),
@@ -139,7 +139,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         child: DecoratedBox(
                           decoration: BoxDecoration(
                             color: AppColor.primaryColor400,
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(10.r),
                           ),
                           child: SizedBox(
                             width: double.infinity,
