@@ -1,4 +1,5 @@
 import 'package:locapet/core/theme/app_text_style.dart';
+import 'package:locapet/export/feat.dart';
 import 'package:locapet/export/package.dart';
 
 class SocialLoginBtn extends StatelessWidget {
@@ -6,6 +7,7 @@ class SocialLoginBtn extends StatelessWidget {
   final String buttonText;
   final Color buttonColor;
   final Color buttonTextColor;
+  final Color borderColor;
   final VoidCallback onTap;
 
   const SocialLoginBtn({
@@ -14,6 +16,7 @@ class SocialLoginBtn extends StatelessWidget {
     required this.buttonText,
     required this.buttonColor,
     required this.buttonTextColor,
+    required this.borderColor,
     required this.onTap,
   });
 
@@ -21,31 +24,31 @@ class SocialLoginBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: DecoratedBox(
+      child: CommonDecoratedBox(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(12.r),
+          border: Border.all(width: 1.0.w, color: borderColor),
           color: buttonColor,
         ),
-        child: SizedBox(
-          height: 48.h,
-          child: Stack(
-            children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 16.w),
-                  child: SvgPicture.asset(assetName),
-                ),
+        height: 52.h,
+        width: double.infinity,
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.only(left: 16.w),
+                child: SvgPicture.asset(assetName),
               ),
-              Center(
-                child: Text(
-                  textAlign: TextAlign.center,
-                  buttonText,
-                  style: AppTextStyle.label14M,
-                ),
+            ),
+            Center(
+              child: Text(
+                textAlign: TextAlign.center,
+                buttonText,
+                style: AppTextStyle.head16SB.copyWith(color: buttonTextColor),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

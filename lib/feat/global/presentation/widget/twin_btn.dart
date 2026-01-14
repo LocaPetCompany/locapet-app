@@ -1,4 +1,5 @@
 import 'package:locapet/export/core.dart';
+import 'package:locapet/export/feat.dart';
 import 'package:locapet/export/package.dart';
 
 class TwinBtn extends StatelessWidget {
@@ -21,48 +22,47 @@ class TwinBtn extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Expanded(
-          child: DecoratedBox(
+          child: CommonDecoratedBox(
             decoration: BoxDecoration(
               color: AppColor.grayColor700,
               borderRadius: BorderRadius.circular(12),
             ),
+            height: 52,
+            width: double.infinity,
             child: GestureDetector(
               onTap: leftOnTap,
-              child: SizedBox(
-                height: 52,
-                child: Center(
-                  child: Text(
-                    leftText,
-                    style: const TextStyle(
-                      color: AppColor.whiteColor,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
+              child: Center(
+                child: Text(
+                  leftText,
+                  style: const TextStyle(
+                    color: AppColor.whiteColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
             ),
           ),
         ),
+
         const Gap(10),
         Expanded(
-          child: DecoratedBox(
+          child: CommonDecoratedBox(
             decoration: BoxDecoration(
               color: AppColor.primaryColor500,
               borderRadius: BorderRadius.circular(12),
             ),
+            height: 52,
+            width: double.infinity,
             child: GestureDetector(
               onTap: rightOnTap,
-              child: SizedBox(
-                height: 52,
-                child: Center(
-                  child: Text(
-                    rightText,
-                    style: const TextStyle(
-                      color: AppColor.whiteColor,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
+              child: Center(
+                child: Text(
+                  rightText,
+                  style: const TextStyle(
+                    color: AppColor.whiteColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),

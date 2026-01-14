@@ -1,4 +1,5 @@
 import 'package:locapet/export/core.dart';
+import 'package:locapet/export/feat.dart';
 import 'package:locapet/export/package.dart';
 
 class ConfirmBtn extends StatelessWidget {
@@ -17,22 +18,20 @@ class ConfirmBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: DecoratedBox(
+      child: CommonDecoratedBox(
         decoration: BoxDecoration(
           color: isActive ? AppColor.primaryColor500 : AppColor.grayColor700,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
         ),
-        child: SizedBox(
-          height: 52,
-          width: double.infinity,
-          child: Center(
-            child: Text(
-              text,
-              style: const TextStyle(
-                color: AppColor.whiteColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
+        height: 52,
+        width: double.infinity,
+        child: Center(
+          child: Text(
+            text,
+            style: const TextStyle(
+              color: AppColor.whiteColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
             ),
           ),
         ),

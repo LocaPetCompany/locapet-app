@@ -22,6 +22,7 @@ export 'package:gap/gap.dart';
 export 'package:get_it/get_it.dart';
 export 'package:go_router/go_router.dart';
 export 'package:google_sign_in/google_sign_in.dart';
+export 'package:image_picker/image_picker.dart';
 export 'package:json_annotation/json_annotation.dart';
 export 'package:logger/logger.dart';
 export 'package:naver_login_sdk/naver_login_sdk.dart';

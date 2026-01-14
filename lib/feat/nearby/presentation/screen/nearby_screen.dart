@@ -11,7 +11,7 @@ class NearbyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: StarterAppBar(title: '근처'),
+      appBar: SubAppBar(title: '근처'),
       body: Center(child: Text('근처 화면', style: TextStyle(fontSize: 24))),
     );
   }
