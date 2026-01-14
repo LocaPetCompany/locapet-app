@@ -114,52 +114,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ],
                   ),
                 ),
-                DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: AppColor.whiteColor,
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0.w, -2.h),
-                        blurRadius: 12,
-                        spreadRadius: 0,
-                        color: AppColor.blackColor.withValues(alpha: 0.05),
-                      ),
-                    ],
-                  ),
-                  child: SizedBox(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 24.w,
-                        vertical: 12.h,
-                      ),
-                      child: GestureDetector(
-                        onTap: state.pageIndex == 2
-                            ? () => onComplete(context)
-                            : onNext,
-                        child: DecoratedBox(
-                          decoration: BoxDecoration(
-                            color: AppColor.primaryColor400,
-                            borderRadius: BorderRadius.circular(10.r),
-                          ),
-                          child: SizedBox(
-                            width: double.infinity,
-                            height: 44.h,
-
-                            child: Center(
-                              child: Text(
-                                state.pageIndex == 2 ? '완료' : '다음',
-                                style: AppTextStyle.label16B.copyWith(
-                                  color: AppColor.whiteColor,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
               ],
+            ),
+            bottomNavigationBar: BottomContainer(
+              onTap: state.pageIndex == 2 ? () => onComplete(context) : onNext,
+              text: state.pageIndex == 2 ? '완료' : '다음',
             ),
           ),
         );
