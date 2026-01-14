@@ -116,9 +116,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ],
             ),
-            bottomNavigationBar: BottomContainer(
+            bottomSheet: BottomContainer(
               onTap: state.pageIndex == 2 ? () => onComplete(context) : onNext,
               text: state.pageIndex == 2 ? '완료' : '다음',
+              boxColor: AppColor.primaryColor400,
             ),
           ),
         );

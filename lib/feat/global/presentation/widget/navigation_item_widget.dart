@@ -1,4 +1,5 @@
 import 'package:locapet/export/core.dart';
+import 'package:locapet/export/feat.dart';
 import 'package:locapet/export/package.dart';
 
 class NavigationItemWidget extends StatelessWidget {
@@ -21,7 +22,7 @@ class NavigationItemWidget extends StatelessWidget {
       child: GestureDetector(
         behavior: HitTestBehavior.translucent,
         onTap: onTap,
-        child: DecoratedBox(
+        child: CommonDecoratedBox(
           decoration: BoxDecoration(
             color: AppColor.whiteColor,
             boxShadow: [
@@ -33,20 +34,18 @@ class NavigationItemWidget extends StatelessWidget {
               ),
             ],
           ),
-          child: SizedBox(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  icon,
-                  color: isActive
-                      ? AppColor.primaryColor500
-                      : AppColor.grayColor700,
-                ),
-                const Gap(4),
-                Text(label, style: AppTextStyle.label12M),
-              ],
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                icon,
+                color: isActive
+                    ? AppColor.primaryColor500
+                    : AppColor.grayColor700,
+              ),
+              const Gap(4),
+              Text(label, style: AppTextStyle.label12M),
+            ],
           ),
         ),
       ),
