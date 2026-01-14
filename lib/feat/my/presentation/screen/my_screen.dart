@@ -11,7 +11,7 @@ class MyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: StarterAppBar(title: '마이'),
+      appBar: SubAppBar(title: '마이'),
       body: Center(child: Text('마이 화면', style: TextStyle(fontSize: 24))),
     );
   }
