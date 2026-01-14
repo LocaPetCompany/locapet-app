@@ -11,7 +11,7 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: StarterAppBar(title: '검색'),
+      appBar: SubAppBar(title: '검색'),
       body: Center(child: Text('검색 화면', style: TextStyle(fontSize: 24))),
     );
   }

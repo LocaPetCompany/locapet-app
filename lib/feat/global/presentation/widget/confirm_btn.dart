@@ -20,7 +20,7 @@ class ConfirmBtn extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: isActive ? AppColor.primaryColor500 : AppColor.grayColor700,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
         ),
         child: SizedBox(
           height: 52,

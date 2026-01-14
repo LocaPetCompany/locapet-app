@@ -11,7 +11,7 @@ class FavoriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: StarterAppBar(title: '찜'),
+      appBar: SubAppBar(title: '찜'),
       body: Center(child: Text('찜 화면', style: TextStyle(fontSize: 24))),
     );
   }
