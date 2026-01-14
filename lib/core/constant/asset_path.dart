@@ -9,8 +9,9 @@ class AssetPath {
   static const String onboardingThird = '$_imagePath/onboarding_third.png';
 
   // Svg
-  // Bottom navigation
-  static const String avatarActive = '$_svgIconPath/avatar_active.svg';
+  // Icon
+  static const String google = '$_svgIconPath/google.svg';
+  static const String apple = '$_svgIconPath/apple.svg';
 
   // Logo
   static const String logo = '$_svgLogoPath/main_logo.svg';

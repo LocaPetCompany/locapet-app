@@ -104,7 +104,7 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/logos/
-    - assets/icons/
+    - assets/svgs/icons/
 
   fonts:
     - family: Pretendard
