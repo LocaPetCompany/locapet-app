@@ -144,6 +144,23 @@ class GlobalFunction {
     return null;
   }
 
+  /// 디바이스의 갤러리에서 이미지를 선택합니다.
+  ///
+  /// 사용자가 이미지를 선택하면 해당 파일의 `File` 객체를 반환하고,
+  /// 선택을 취소하면 `null`을 반환합니다.
+  ///
+  /// @return 선택된 이미지를 나타내는 `Future<File?>`입니다.
+  static Future<File?> pickImage() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+
+    if (image != null) {
+      return File(image.path);
+    }
+    // 사용자가 이미지 선택을 취소한 경우
+    return null;
+  }
+
   /// 🔄 `Future<T> showLoadingFor<T>()`
   ///
   /// 비동기 작업(`future`)이 실행되는 동안 로딩 인디케이터를 표시합니다.

@@ -1,4 +1,5 @@
 import 'package:locapet/export/core.dart';
+import 'package:locapet/export/feat.dart';
 import 'package:locapet/export/package.dart';
 
 class CommonSafeArea extends StatelessWidget {
@@ -10,9 +11,9 @@ class CommonSafeArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
-      child: DecoratedBox(
+      child: CommonDecoratedBox(
         decoration: const BoxDecoration(color: AppColor.whiteColor),
-        child: SizedBox(child: SafeArea(child: child)),
+        child: SafeArea(child: child),
       ),
     );
   }

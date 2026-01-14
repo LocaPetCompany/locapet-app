@@ -1,4 +1,5 @@
 import 'package:locapet/core/theme/app_text_style.dart';
+import 'package:locapet/export/feat.dart';
 import 'package:locapet/export/package.dart';
 
 class SocialLoginBtn extends StatelessWidget {
@@ -23,32 +24,31 @@ class SocialLoginBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: DecoratedBox(
+      child: CommonDecoratedBox(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.r),
           border: Border.all(width: 1.0.w, color: borderColor),
           color: buttonColor,
         ),
-        child: SizedBox(
-          height: 52.h,
-          child: Stack(
-            children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 16.w),
-                  child: SvgPicture.asset(assetName),
-                ),
+        height: 52.h,
+        width: double.infinity,
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.only(left: 16.w),
+                child: SvgPicture.asset(assetName),
               ),
-              Center(
-                child: Text(
-                  textAlign: TextAlign.center,
-                  buttonText,
-                  style: AppTextStyle.head16SB.copyWith(color: buttonTextColor),
-                ),
+            ),
+            Center(
+              child: Text(
+                textAlign: TextAlign.center,
+                buttonText,
+                style: AppTextStyle.head16SB.copyWith(color: buttonTextColor),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

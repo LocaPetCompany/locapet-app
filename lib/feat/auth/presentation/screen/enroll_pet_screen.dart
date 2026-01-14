@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:locapet/export/feat.dart';
 
 class EnrollPetScreen extends StatelessWidget {
   static const String routeName = 'enroll_pet';
@@ -8,6 +9,9 @@ class EnrollPetScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      appBar: SubAppBar(title: '펫 등록'),
+      body: Center(child: Text('펫 등록')),
+    );
   }
 }
