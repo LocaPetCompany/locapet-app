@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AuthCompleteScreen extends StatelessWidget {
   static const String routeName = 'auth_complete';
-  static const String routePath = '/auth/auth_complete';
+  static const String routePath = '/auth_complete';
 
   const AuthCompleteScreen({super.key});
 
