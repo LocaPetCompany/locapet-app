@@ -8,3 +8,10 @@ extension FigmaTextStyleHeight on TextStyle {
     return copyWith(height: figmaLineHeightPx / fontSize!);
   }
 }
+
+extension FigmaSpacing on TextStyle {
+  TextStyle withFigmaSpacing({double? percentage}) {
+    if (percentage == null || fontSize == null) return this;
+    return copyWith(letterSpacing: fontSize! * (percentage / 100));
+  }
+}
