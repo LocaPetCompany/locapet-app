@@ -63,17 +63,8 @@ class AppRouter {
                   name: CreateProfileScreen.routeName,
                   builder: (context, state) {
                     _logger.i('${state.uri}으로 이동!!!');
-                    return MultiBlocProvider(
-                      providers: [
-                        BlocProvider(
-                          create: (context) => CommonTextFieldCubit(
-                            hintText: '닉네임',
-                            guideText: '* 최대 6글자',
-                            isEnabled: true,
-                          ),
-                        ),
-                        BlocProvider(create: (context) => CreateProfileCubit()),
-                      ],
+                    return BlocProvider(
+                      create: (context) => CreateProfileCubit(),
                       child: const CreateProfileScreen(),
                     );
                   },
