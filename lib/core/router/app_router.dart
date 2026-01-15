@@ -147,7 +147,8 @@ class AppRouter {
               name: EnrollPetScreen.routeName,
               builder: (context, state) {
                 _logger.i('${state.uri}으로 이동!!!');
-                return const EnrollPetScreen();
+                final appBarTitle = state.extra as String;
+                return EnrollPetScreen(appBarTitle: appBarTitle);
               },
             ),
           ],
