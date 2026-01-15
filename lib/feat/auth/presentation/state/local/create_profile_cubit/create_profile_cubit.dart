@@ -15,4 +15,8 @@ class CreateProfileCubit extends Cubit<CreateProfileState> {
       emit(state.copyWith(profileImage: image));
     }
   }
+
+  void setNickname(String nickname) {
+    emit(state.copyWith(nickname: nickname));
+  }
 }
