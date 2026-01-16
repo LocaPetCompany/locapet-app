@@ -10,31 +10,51 @@ class BaseScreen extends StatelessWidget {
   static const String routeName = 'base';
   static const String routePath = '/';
 
-  /// `go_router`의 `StatefulShellRoute`에서 제공하는 내비게이션 셸입니다.
-  ///
-  /// 현재 탭의 인덱스(`currentIndex`)와 탭 간 이동을 위한 `goBranch` 메소드를 포함하고 있어
-  /// 탭 상태를 관리하는 데 사용됩니다.
   final StatefulNavigationShell navigationShell;
 
-  /// [BaseScreen] 위젯을 생성합니다.
-  ///
-  /// [navigationShell]은 필수 파라미터입니다.
   const BaseScreen({super.key, required this.navigationShell});
 
   @override
   Widget build(BuildContext context) {
     return CommonSafeArea(
-      child: Scaffold(
-        body: navigationShell,
-        bottomNavigationBar: BottomNavigationBarWidget(
-          currentIndex: navigationShell.currentIndex,
-          onTap: (int index) {
-            navigationShell.goBranch(
-              index,
-              initialLocation: index == navigationShell.currentIndex,
-            );
-          },
-        ),
+      child: BlocBuilder<NavigationHistoryCubit, NavigationHistoryState>(
+        builder: (context, state) {
+          return PopScope(
+            canPop: false,
+            onPopInvokedWithResult: (didPop, result) {
+              if (didPop) return;
+
+              final cubit = context.read<NavigationHistoryCubit>();
+              if (state.history.isNotEmpty) {
+                cubit.pop();
+                final prevIndex = state.history.last;
+                navigationShell.goBranch(prevIndex);
+              } else {
+                if (navigationShell.currentIndex != 0) {
+                  cubit.clear();
+                  navigationShell.goBranch(0);
+                } else {
+                  SystemNavigator.pop();
+                }
+              }
+            },
+            child: Scaffold(
+              body: navigationShell,
+              bottomNavigationBar: BottomNavigationBarWidget(
+                currentIndex: navigationShell.currentIndex,
+                onTap: (int index) {
+                  context.read<NavigationHistoryCubit>().push(
+                    navigationShell.currentIndex,
+                  );
+                  navigationShell.goBranch(
+                    index,
+                    initialLocation: index == navigationShell.currentIndex,
+                  );
+                },
+              ),
+            ),
+          );
+        },
       ),
     );
   }

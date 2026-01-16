@@ -13,6 +13,7 @@ export './presentation/screen/base_screen.dart';
 export './presentation/screen/network_error_screen.dart';
 export './presentation/screen/splash_screen.dart';
 export './presentation/state/local/dropdown_cubit/dropdown_cubit.dart';
+export './presentation/state/local/navigation_history_cubit/navigation_history_cubit.dart';
 export './presentation/state/local/network_check_cubit/network_check_cubit.dart';
 export './presentation/state/remote/server_check_cubit/server_check_cubit.dart';
 export './presentation/widget/bottom_container.dart';

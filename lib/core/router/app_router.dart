@@ -81,7 +81,10 @@ class AppRouter {
             ),
             StatefulShellRoute.indexedStack(
               builder: (context, state, navigationShell) {
-                return BaseScreen(navigationShell: navigationShell);
+                return BlocProvider(
+                  create: (context) => NavigationHistoryCubit(),
+                  child: BaseScreen(navigationShell: navigationShell),
+                );
               },
               branches: [
                 StatefulShellBranch(
