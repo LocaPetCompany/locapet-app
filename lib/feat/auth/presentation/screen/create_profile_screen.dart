@@ -96,7 +96,10 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
             ),
             bottomSheet: BottomContainer(
               onTap: profileState.nickname.isNotEmpty
-                  ? () => context.pushNamed(EnrollPetScreen.routeName)
+                  ? () => context.pushNamed(
+                      EnrollPetScreen.routeName,
+                      extra: '반려동물 등록',
+                    )
                   : () {},
               text: '완료',
               boxColor: profileState.nickname.isNotEmpty

@@ -12,7 +12,7 @@ class AppRouter {
     final rootNavigatorKey = GlobalKey<NavigatorState>();
 
     router = GoRouter(
-      initialLocation: AuthScreen.routePath,
+      initialLocation: EnrollPetScreen.routePath,
       navigatorKey: rootNavigatorKey,
       routes: [
         ShellRoute(
@@ -147,7 +147,12 @@ class AppRouter {
               name: EnrollPetScreen.routeName,
               builder: (context, state) {
                 _logger.i('${state.uri}으로 이동!!!');
-                return const EnrollPetScreen();
+                // final appBarTitle = state.extra as String;
+                const String appBarTitle = '디버깅용';
+                return BlocProvider(
+                  create: (context) => EnrollPetCubit(),
+                  child: const EnrollPetScreen(appBarTitle: appBarTitle),
+                );
               },
             ),
           ],

@@ -8,6 +8,7 @@ export '../core/di/get_it_dependancy.config.dart';
 export '../core/di/get_it_dependancy.dart';
 export '../core/di/register_module.dart';
 export '../core/enum/async_state.dart';
+export '../core/enum/pet_type.dart';
 export '../core/enum/social_login_type.dart';
 export '../core/router/app_router.dart';
 export '../core/services/analytics_service.dart';

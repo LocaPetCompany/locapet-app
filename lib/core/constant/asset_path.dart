@@ -14,6 +14,8 @@ class AssetPath {
   static const String apple = '$_svgIconPath/apple.svg';
   static const String avatar = '$_svgIconPath/avatar.svg';
   static const String camera = '$_svgIconPath/camera.svg';
+  static const String dog = '$_svgIconPath/dog.svg';
+  static const String cat = '$_svgIconPath/cat.svg';
   static const String textDelete = '$_svgIconPath/text_delete.svg';
 
   // Logo

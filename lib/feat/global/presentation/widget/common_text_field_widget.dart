@@ -29,37 +29,21 @@ class CommonTextField extends StatefulWidget {
 
 class _CommonTextFieldWidgetState extends State<CommonTextField> {
   late FocusNode _focusNode;
-  bool _isFocused = false;
 
   @override
   void initState() {
     super.initState();
     _focusNode = FocusNode();
-    _focusNode.addListener(_onFocusChanged);
   }
 
   @override
   void dispose() {
-    _focusNode.removeListener(_onFocusChanged);
     _focusNode.dispose();
     super.dispose();
   }
 
-  void _onFocusChanged() {
-    setState(() {
-      _isFocused = _focusNode.hasFocus;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    Color borderColor;
-    if (_isFocused) {
-      borderColor = AppColor.grayColor600;
-    } else {
-      borderColor = AppColor.grayColor300;
-    }
-
     Color backgroundColor = widget.isEnabled
         ? AppColor.whiteColor
         : AppColor.grayColor50;
@@ -68,13 +52,22 @@ class _CommonTextFieldWidgetState extends State<CommonTextField> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Container(
-          padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
-          decoration: BoxDecoration(
-            color: backgroundColor,
-            border: Border.all(color: borderColor),
-            borderRadius: BorderRadius.circular(10.r),
-          ),
+        AnimatedBuilder(
+          animation: _focusNode,
+          builder: (context, child) {
+            Color borderColor = _focusNode.hasFocus
+                ? AppColor.grayColor600
+                : AppColor.grayColor300;
+            return Container(
+              padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
+              decoration: BoxDecoration(
+                color: backgroundColor,
+                border: Border.all(color: borderColor, width: 1.w),
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: child,
+            );
+          },
           child: Row(
             children: [
               Expanded(
@@ -102,17 +95,22 @@ class _CommonTextFieldWidgetState extends State<CommonTextField> {
                   ),
                 ),
               ),
-              if (widget.controller.text.isNotEmpty && widget.isEnabled)
-                GestureDetector(
-                  onTap: () {
-                    widget.controller.clear();
-                    setState(() {}); // Update UI to hide delete button
+              if (widget.isEnabled)
+                ValueListenableBuilder<TextEditingValue>(
+                  valueListenable: widget.controller,
+                  builder: (context, value, child) {
+                    if (value.text.isEmpty) return const SizedBox.shrink();
+                    return GestureDetector(
+                      onTap: () {
+                        widget.controller.clear();
+                      },
+                      child: SvgPicture.asset(
+                        AssetPath.textDelete,
+                        width: 20.w,
+                        height: 20.h,
+                      ),
+                    );
                   },
-                  child: SvgPicture.asset(
-                    AssetPath.textDelete,
-                    width: 20.w,
-                    height: 20.h,
-                  ),
                 ),
             ],
           ),
