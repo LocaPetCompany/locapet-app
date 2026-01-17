@@ -25,6 +25,7 @@ class AppColor {
   // Primary Color
   static const Color primaryColor500 = Color(0xFFF00029);
   static const Color primaryColor400 = Color(0xFFF33354);
+  static const Color primaryColor300 = Color(0xFFF55470);
   static const Color primaryColor50 = Color(0xFFFee6EA);
 
   // Secondary Color
