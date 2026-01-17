@@ -24,4 +24,40 @@ class EnrollPetCubit extends Cubit<EnrollPetState> {
       emit(state.copyWith(petImage: image));
     }
   }
+
+  void selectPetBirth(String birth) {
+    emit(state.copyWith(petBirth: birth));
+  }
+
+  void selectPetWeight(double weight) {
+    emit(state.copyWith(petWeight: weight));
+  }
+
+  void selectPetNeutering(String neutering) {
+    emit(state.copyWith(petNeutering: neutering));
+  }
+
+  void selectPetVaccination(String vaccination) {
+    emit(state.copyWith(petVaccination: vaccination));
+  }
+
+  void selectPetEnrollChip(String enrollChip) {
+    emit(state.copyWith(petEnrollChip: enrollChip));
+  }
+
+  void selectPetBreed(String breed) {
+    emit(state.copyWith(petBreed: breed));
+  }
+
+  void selectPetAllergy(String allergy) {
+    emit(state.copyWith(petAllergy: allergy));
+  }
+
+  void selectPetPersonality(String personality) {
+    emit(state.copyWith(petPersonality: personality));
+  }
+
+  void selectPetIntroduction(String introduction) {
+    emit(state.copyWith(petIntroduction: introduction));
+  }
 }
