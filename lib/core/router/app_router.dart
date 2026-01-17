@@ -12,7 +12,7 @@ class AppRouter {
     final rootNavigatorKey = GlobalKey<NavigatorState>();
 
     router = GoRouter(
-      initialLocation: AuthScreen.routePath,
+      initialLocation: EnrollPetScreen.routePath,
       navigatorKey: rootNavigatorKey,
       routes: [
         ShellRoute(
@@ -63,17 +63,8 @@ class AppRouter {
                   name: CreateProfileScreen.routeName,
                   builder: (context, state) {
                     _logger.i('${state.uri}으로 이동!!!');
-                    return MultiBlocProvider(
-                      providers: [
-                        BlocProvider(
-                          create: (context) => CommonTextFieldCubit(
-                            hintText: '닉네임',
-                            guideText: '* 최대 6글자',
-                            isEnabled: true,
-                          ),
-                        ),
-                        BlocProvider(create: (context) => CreateProfileCubit()),
-                      ],
+                    return BlocProvider(
+                      create: (context) => CreateProfileCubit(),
                       child: const CreateProfileScreen(),
                     );
                   },
@@ -90,7 +81,10 @@ class AppRouter {
             ),
             StatefulShellRoute.indexedStack(
               builder: (context, state, navigationShell) {
-                return BaseScreen(navigationShell: navigationShell);
+                return BlocProvider(
+                  create: (context) => NavigationHistoryCubit(),
+                  child: BaseScreen(navigationShell: navigationShell),
+                );
               },
               branches: [
                 StatefulShellBranch(
@@ -156,7 +150,12 @@ class AppRouter {
               name: EnrollPetScreen.routeName,
               builder: (context, state) {
                 _logger.i('${state.uri}으로 이동!!!');
-                return const EnrollPetScreen();
+                // final appBarTitle = state.extra as String;
+                const String appBarTitle = '디버깅용';
+                return BlocProvider(
+                  create: (context) => EnrollPetCubit(),
+                  child: const EnrollPetScreen(appBarTitle: appBarTitle),
+                );
               },
             ),
           ],

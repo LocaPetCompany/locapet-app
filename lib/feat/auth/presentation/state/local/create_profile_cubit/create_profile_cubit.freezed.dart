@@ -12,9 +12,9 @@ part of 'create_profile_cubit.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$CreateProfileState {
+mixin _$CreateProfileState implements DiagnosticableTreeMixin {
 
- File? get profileImage;
+ File? get profileImage; String get nickname;
 /// Create a copy of CreateProfileState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -22,19 +22,25 @@ mixin _$CreateProfileState {
 $CreateProfileStateCopyWith<CreateProfileState> get copyWith => _$CreateProfileStateCopyWithImpl<CreateProfileState>(this as CreateProfileState, _$identity);
 
 
+@override
+void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  properties
+    ..add(DiagnosticsProperty('type', 'CreateProfileState'))
+    ..add(DiagnosticsProperty('profileImage', profileImage))..add(DiagnosticsProperty('nickname', nickname));
+}
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateProfileState&&(identical(other.profileImage, profileImage) || other.profileImage == profileImage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateProfileState&&(identical(other.profileImage, profileImage) || other.profileImage == profileImage)&&(identical(other.nickname, nickname) || other.nickname == nickname));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,profileImage);
+int get hashCode => Object.hash(runtimeType,profileImage,nickname);
 
 @override
-String toString() {
-  return 'CreateProfileState(profileImage: $profileImage)';
+String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+  return 'CreateProfileState(profileImage: $profileImage, nickname: $nickname)';
 }
 
 
@@ -45,7 +51,7 @@ abstract mixin class $CreateProfileStateCopyWith<$Res>  {
   factory $CreateProfileStateCopyWith(CreateProfileState value, $Res Function(CreateProfileState) _then) = _$CreateProfileStateCopyWithImpl;
 @useResult
 $Res call({
- File? profileImage
+ File? profileImage, String nickname
 });
 
 
@@ -62,10 +68,11 @@ class _$CreateProfileStateCopyWithImpl<$Res>
 
 /// Create a copy of CreateProfileState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? profileImage = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? profileImage = freezed,Object? nickname = null,}) {
   return _then(_self.copyWith(
 profileImage: freezed == profileImage ? _self.profileImage : profileImage // ignore: cast_nullable_to_non_nullable
-as File?,
+as File?,nickname: null == nickname ? _self.nickname : nickname // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 
@@ -150,10 +157,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( File? profileImage)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( File? profileImage,  String nickname)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CreateProfileState() when $default != null:
-return $default(_that.profileImage);case _:
+return $default(_that.profileImage,_that.nickname);case _:
   return orElse();
 
 }
@@ -171,10 +178,10 @@ return $default(_that.profileImage);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( File? profileImage)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( File? profileImage,  String nickname)  $default,) {final _that = this;
 switch (_that) {
 case _CreateProfileState():
-return $default(_that.profileImage);case _:
+return $default(_that.profileImage,_that.nickname);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -191,10 +198,10 @@ return $default(_that.profileImage);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( File? profileImage)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( File? profileImage,  String nickname)?  $default,) {final _that = this;
 switch (_that) {
 case _CreateProfileState() when $default != null:
-return $default(_that.profileImage);case _:
+return $default(_that.profileImage,_that.nickname);case _:
   return null;
 
 }
@@ -205,11 +212,12 @@ return $default(_that.profileImage);case _:
 /// @nodoc
 
 
-class _CreateProfileState implements CreateProfileState {
-  const _CreateProfileState({this.profileImage});
+class _CreateProfileState with DiagnosticableTreeMixin implements CreateProfileState {
+  const _CreateProfileState({this.profileImage, this.nickname = ''});
   
 
 @override final  File? profileImage;
+@override@JsonKey() final  String nickname;
 
 /// Create a copy of CreateProfileState
 /// with the given fields replaced by the non-null parameter values.
@@ -218,19 +226,25 @@ class _CreateProfileState implements CreateProfileState {
 _$CreateProfileStateCopyWith<_CreateProfileState> get copyWith => __$CreateProfileStateCopyWithImpl<_CreateProfileState>(this, _$identity);
 
 
+@override
+void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  properties
+    ..add(DiagnosticsProperty('type', 'CreateProfileState'))
+    ..add(DiagnosticsProperty('profileImage', profileImage))..add(DiagnosticsProperty('nickname', nickname));
+}
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CreateProfileState&&(identical(other.profileImage, profileImage) || other.profileImage == profileImage));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CreateProfileState&&(identical(other.profileImage, profileImage) || other.profileImage == profileImage)&&(identical(other.nickname, nickname) || other.nickname == nickname));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,profileImage);
+int get hashCode => Object.hash(runtimeType,profileImage,nickname);
 
 @override
-String toString() {
-  return 'CreateProfileState(profileImage: $profileImage)';
+String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+  return 'CreateProfileState(profileImage: $profileImage, nickname: $nickname)';
 }
 
 
@@ -241,7 +255,7 @@ abstract mixin class _$CreateProfileStateCopyWith<$Res> implements $CreateProfil
   factory _$CreateProfileStateCopyWith(_CreateProfileState value, $Res Function(_CreateProfileState) _then) = __$CreateProfileStateCopyWithImpl;
 @override @useResult
 $Res call({
- File? profileImage
+ File? profileImage, String nickname
 });
 
 
@@ -258,10 +272,11 @@ class __$CreateProfileStateCopyWithImpl<$Res>
 
 /// Create a copy of CreateProfileState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? profileImage = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? profileImage = freezed,Object? nickname = null,}) {
   return _then(_CreateProfileState(
 profileImage: freezed == profileImage ? _self.profileImage : profileImage // ignore: cast_nullable_to_non_nullable
-as File?,
+as File?,nickname: null == nickname ? _self.nickname : nickname // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 

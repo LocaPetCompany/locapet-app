@@ -1,4 +1,5 @@
 export '../feat/auth/auth_export.dart';
+export '../feat/enroll_pet/enroll_pet_export.dart';
 export '../feat/favorite/favorite_export.dart';
 export '../feat/global/global_export.dart';
 export '../feat/home/home_export.dart';
