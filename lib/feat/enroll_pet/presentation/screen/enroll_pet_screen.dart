@@ -16,10 +16,20 @@ class EnrollPetScreen extends StatefulWidget {
 
 class _EnrollPetScreenState extends State<EnrollPetScreen> {
   final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _birthController = TextEditingController();
+  final TextEditingController _weightController = TextEditingController();
+  final TextEditingController _breedController = TextEditingController();
+  final TextEditingController _personalityController = TextEditingController();
+  final TextEditingController _introductionController = TextEditingController();
 
   @override
   void dispose() {
     _nameController.dispose();
+    _birthController.dispose();
+    _weightController.dispose();
+    _breedController.dispose();
+    _personalityController.dispose();
+    _introductionController.dispose();
     super.dispose();
   }
 
@@ -121,35 +131,111 @@ class _EnrollPetScreenState extends State<EnrollPetScreen> {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 24.w),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Gap(12.h),
+                        Row(
+                          children: [
+                            Text(
+                              '기본 정보',
+                              style: AppTextStyle.head13SB.copyWith(
+                                color: AppColor.textSecondaryColor,
+                              ),
+                            ),
+                            const Gap(4),
+                            Text(
+                              '(필수)',
+                              style: AppTextStyle.label16R.copyWith(
+                                fontSize: 13.sp,
+                                color: AppColor.primaryColor300,
+                              ),
+                            ),
+                          ],
+                        ),
                         TextFieldRow(
                           label: '이름',
                           hintText: '이름을 입력해주세요',
                           keyboardType: TextInputType.name,
                           textFieldController: _nameController,
                         ),
-                        Column(
-                          children: [
-                            TwinBtnRow(
-                              label: '성별',
-                              leftText: '남아',
-                              leftOnTap: () => context
-                                  .read<EnrollPetCubit>()
-                                  .selectPetGender('MALE'),
-                              leftIsEnabled: state.petGender == 'MALE',
-                              rightText: '여아',
-                              rightOnTap: () => context
-                                  .read<EnrollPetCubit>()
-                                  .selectPetGender('FEMALE'),
-                              rightIsEnabled: state.petGender == 'FEMALE',
-                            ),
-                          ],
+                        TwinBtnRow(
+                          label: '성별',
+                          leftText: '남아',
+                          leftOnTap: () => context
+                              .read<EnrollPetCubit>()
+                              .selectPetGender('MALE'),
+                          leftIsEnabled: state.petGender == 'MALE',
+                          rightText: '여아',
+                          rightOnTap: () => context
+                              .read<EnrollPetCubit>()
+                              .selectPetGender('FEMALE'),
+                          rightIsEnabled: state.petGender == 'FEMALE',
+                        ),
+                        TextFieldRow(
+                          label: '생년월일',
+                          hintText: 'ex) 2000.10.10',
+                          keyboardType: TextInputType.number,
+                          textFieldController: _birthController,
+                        ),
+                        TextFieldRow(
+                          label: '몸무게(kg)',
+                          hintText: 'ex) 0.7 / 2.3',
+                          keyboardType: TextInputType.number,
+                          textFieldController: _weightController,
+                        ),
+                        TwinBtnRow(
+                          label: '중성화',
+                          leftText: '했어요',
+                          leftOnTap: () => context
+                              .read<EnrollPetCubit>()
+                              .selectPetNeutering('했어요'),
+                          leftIsEnabled: state.petNeutering == '했어요',
+                          rightText: '안했어요',
+                          rightOnTap: () => context
+                              .read<EnrollPetCubit>()
+                              .selectPetNeutering('안했어요'),
+                          rightIsEnabled: state.petNeutering == '안했어요',
+                        ),
+                        TwinBtnRow(
+                          label: '예방접종',
+                          leftText: '받았어요',
+                          leftOnTap: () => context
+                              .read<EnrollPetCubit>()
+                              .selectPetVaccination('받았어요'),
+                          leftIsEnabled: state.petVaccination == '받았어요',
+                          rightText: '안받았어요',
+                          rightOnTap: () => context
+                              .read<EnrollPetCubit>()
+                              .selectPetVaccination('안받았어요'),
+                          rightIsEnabled: state.petVaccination == '안받았어요',
+                        ),
+                        TwinBtnRow(
+                          label: '동물등록칩',
+                          leftText: '있어요',
+                          leftOnTap: () => context
+                              .read<EnrollPetCubit>()
+                              .selectPetEnrollChip('있어요'),
+                          leftIsEnabled: state.petEnrollChip == '있어요',
+                          rightText: '없어요',
+                          rightOnTap: () => context
+                              .read<EnrollPetCubit>()
+                              .selectPetEnrollChip('없어요'),
+                          rightIsEnabled: state.petEnrollChip == '없어요',
+                        ),
+
+                        TextFieldRow(
+                          label: '품종',
+                          hintText: 'ex) 렉돌 / 먼치킨',
+                          keyboardType: TextInputType.text,
+                          textFieldController: _breedController,
                         ),
                       ],
                     ),
                   ),
+                  Gap(12.h),
                   const HorizontalDivider(),
                   const HorizontalDivider(),
+                  Gap(60.h),
                 ],
               ),
             ),
