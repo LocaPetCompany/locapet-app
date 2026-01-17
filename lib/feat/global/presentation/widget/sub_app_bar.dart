@@ -15,6 +15,7 @@ class SubAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       actions: actions,
       backgroundColor: AppColor.whiteColor,
+      surfaceTintColor: AppColor.whiteColor,
       foregroundColor: AppColor.blackColor,
     );
   }
